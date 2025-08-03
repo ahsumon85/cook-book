@@ -64,6 +64,120 @@ Understand:
 - Vertical Scaling = Bigger server
 - Horizontal Scaling = More servers
 
+### 1️⃣ Vertical Scaling (Scale Up)
+
+**Add more power to one server.**
+
+Examples:
+
+```
+More CPU
+More RAM
+Faster SSD
+Better Network
+```
+
+------
+
+### Example
+
+Before:
+
+```
+Server:
+4 CPU
+8 GB RAM
+```
+
+After upgrade:
+
+```
+Server:
+16 CPU
+64 GB RAM
+```
+
+Same machine, stronger hardware.
+
+------
+
+### Diagram
+
+```
+Users
+ ↓
+Big Powerful Server
+```
+
+------
+
+### Benefits
+
+✅ Simple architecture
+✅ No load balancer needed
+✅ Easier deployment
+
+------
+
+### Problems
+
+❌ Hardware limit exists
+❌ Expensive at high levels
+❌ Single point of failure
+❌ Downtime during upgrade possible
+
+## Horizontal Scaling (Scale Out)
+
+**Add more servers instead of making one bigger.**
+
+------
+
+### Example
+
+Before:
+
+```
+1 Server handles 1,000 users
+```
+
+After:
+
+```
+5 Servers handle 5,000+ users
+```
+
+------
+
+### Diagram
+
+```
+Users
+ ↓
+Load Balancer
+ ↓
+Server 1
+Server 2
+Server 3
+```
+
+------
+
+### Benefits
+
+✅ Better fault tolerance
+✅ High availability
+✅ Can grow almost infinitely
+✅ Common in cloud systems
+
+------
+
+### Problems
+
+❌ More complex architecture
+❌ Need load balancer
+❌ Session sharing issues
+❌ Data consistency challenges
+
 ## 5. Load Balancer
 
 - Round Robin
