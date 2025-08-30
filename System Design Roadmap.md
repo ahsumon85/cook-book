@@ -113,18 +113,13 @@ Big Powerful Server
 
 ### Benefits
 
-✅ Simple architecture
-✅ No load balancer needed
-✅ Easier deployment
+Simple architecture, No load balancer needed, Easier deployment
 
 ------
 
 ### Problems
 
-❌ Hardware limit exists
-❌ Expensive at high levels
-❌ Single point of failure
-❌ Downtime during upgrade possible
+Hardware limit exists, Expensive at high levels, Single point of failure,Downtime during upgrade possible
 
 ## Horizontal Scaling (Scale Out)
 
