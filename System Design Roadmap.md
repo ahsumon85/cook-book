@@ -113,13 +113,18 @@ Big Powerful Server
 
 ### Benefits
 
-Simple architecture, No load balancer needed, Easier deployment
+- Simple architecture
+- No load balancer needed
+- Easier deployment
 
 ------
 
 ### Problems
 
-Hardware limit exists, Expensive at high levels, Single point of failure,Downtime during upgrade possible
+- Hardware limit exists
+- Expensive at high levels
+- Single point of failure
+- Downtime during upgrade possible
 
 ## Horizontal Scaling (Scale Out)
 
@@ -175,9 +180,83 @@ Server 3
 
 ## 5. Load Balancer
 
-- Round Robin
-- Least Connections
-- Sticky Session
+A **Load Balancer** distributes incoming traffic across multiple servers so no single server becomes overloaded.
+
+
+```
+Users
+ ↓
+Load Balancer
+ ↓
+App1   App2   App3
+```
+
+Used for:
+
+- scalability
+- high availability
+- failover
+- better performance
+
+------
+
+### Why Needed
+
+Without load balancer:
+
+```
+10,000 users → One server → Crash / Slow
+```
+
+With load balancer:
+
+```
+10,000 users → Split across 3 servers
+```
+
+##  Round Robin
+
+Requests are sent one by one in rotation.
+
+```
+Req1 → Server1
+Req2 → Server2
+Req3 → Server3
+Req4 → Server1
+Req5 → Server2
+```
+
+------
+
+## Best For
+
+- Similar server capacity
+- Similar request sizes
+- Simple web traffic
+
+------
+
+## Pros
+
+✅ Easy
+✅ Fair distribution
+✅ Low overhead
+
+------
+
+## Cons
+
+❌ Doesn't know server load
+❌ Bad if one request is heavy
+
+------
+
+# Example
+
+```
+Server1 busy with report generation
+But still gets next request
+```
 
 ## 6. Caching
 
