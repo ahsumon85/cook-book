@@ -1,6 +1,6 @@
 # **Senior Backend (Java)**
 
-# 🔥 1. Core Java (Must-Prepare Deeply)
+# 1. Core Java (Must-Prepare Deeply)
 
 ### Basics → Advanced
 
@@ -23,7 +23,7 @@
 
 ------
 
-# 🧠 2. System Design (CRITICAL for Senior)
+# 2. System Design (CRITICAL for Senior)
 
 ### Typical Questions
 
@@ -46,7 +46,7 @@
 
 ------
 
-# ⚙️ 3. Spring Boot & Ecosystem
+#  3. Spring Boot & Ecosystem
 
 ### Core Questions
 
@@ -66,7 +66,7 @@
 
 ------
 
-# 🔗 4. Microservices & Distributed Systems
+# 4. Microservices & Distributed Systems
 
 - Monolith vs Microservices
 - How services communicate? (REST vs Messaging)
@@ -79,7 +79,7 @@
 
 ------
 
-# 📩 5. Messaging & Event-Driven (VERY IMPORTANT)
+#  5. Messaging & Event-Driven (VERY IMPORTANT)
 
 - Kafka vs RabbitMQ
 - What is **event-driven architecture**?
@@ -92,7 +92,7 @@
 
 ------
 
-# 🗄️ 6. Database & Caching
+#  6. Database & Caching
 
 ### SQL
 
@@ -117,7 +117,7 @@
 
 ------
 
-# 🚀 7. API Design
+# 7. API Design
 
 - What is REST?
 - How do you version APIs?
@@ -130,7 +130,7 @@
 
 ------
 
-# 🐳 8. DevOps (Practical Questions)
+#  8. DevOps (Practical Questions)
 
 - What is Docker? How do you containerize an app?
 - Difference between Docker & VM
