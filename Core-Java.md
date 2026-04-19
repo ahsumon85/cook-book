@@ -1,161 +1,3 @@
-# What is the difference between a concrete class and an abstract class?
-
-### **Difference Between a Concrete Class and an Abstract Class**
-
-| Feature           | Concrete Class                               | Abstract Class                                               |
-| ----------------- | -------------------------------------------- | ------------------------------------------------------------ |
-| **Instantiation** | Can be instantiated directly.                | Cannot be instantiated directly.                             |
-| **Methods**       | All methods are fully implemented.           | Can have both abstract (unimplemented) and concrete (implemented) methods. |
-| **Inheritance**   | Can be inherited by other classes.           | Must be inherited by a subclass to be used.                  |
-| **Purpose**       | Represents a complete, specific entity.      | Provides a base for other classes and defines a common interface or partial implementation. |
-| **Use Case**      | Used when you need a fully functional class. | Used when you want to share code among related classes or enforce a common interface. |
-
----
-
-### **Concrete Class**
-- A **concrete class** is a class that can be instantiated directly.
-- It provides a complete implementation of all its methods.
-- It is used to create objects that represent specific entities.
-
-#### **Example**:
-```java
-class Dog {
-    void bark() {
-        System.out.println("Woof!");
-    }
-}
-
-// Usage
-Dog myDog = new Dog();
-myDog.bark(); // Output: Woof!
-```
-
----
-
-### **Abstract Class**
-- An **abstract class** cannot be instantiated directly.
-- It can contain both **abstract methods** (methods without implementation) and **concrete methods** (methods with implementation).
-- It is designed to be a base class for other classes. Subclasses must provide implementations for the abstract methods.
-
-#### **Example**:
-```java
-abstract class Animal {
-    // Abstract method (no implementation)
-    abstract void makeSound();
-
-    // Concrete method (with implementation)
-    void sleep() {
-        System.out.println("Sleeping...");
-    }
-}
-
-class Cat extends Animal {
-    void makeSound() {
-        System.out.println("Meow!");
-    }
-}
-
-// Usage
-Animal myCat = new Cat();
-myCat.makeSound(); // Output: Meow!
-myCat.sleep();     // Output: Sleeping...
-```
-
----
-
-### **Key Differences in Detail**
-
-#### **1. Instantiation**
-- **Concrete Class**: You can create objects directly using the `new` keyword.
-  ```java
-  Dog myDog = new Dog();
-  ```
-- **Abstract Class**: You cannot create objects directly. It must be subclassed.
-  ```java
-  // Animal myAnimal = new Animal(); // This will cause a compilation error.
-  Animal myCat = new Cat(); // Correct usage.
-  ```
-
-#### **2. Methods**
-- **Concrete Class**: All methods are fully implemented.
-  ```java
-  class Dog {
-      void bark() {
-          System.out.println("Woof!");
-      }
-  }
-  ```
-- **Abstract Class**: Can have abstract methods (without implementation) and concrete methods (with implementation).
-  ```java
-  abstract class Animal {
-      abstract void makeSound(); // Abstract method
-      void sleep() {             // Concrete method
-          System.out.println("Sleeping...");
-      }
-  }
-  ```
-
-#### **3. Inheritance**
-- **Concrete Class**: Can be inherited, but it is not mandatory.
-  ```java
-  class Puppy extends Dog {
-      void whine() {
-          System.out.println("Whining...");
-      }
-  }
-  ```
-- **Abstract Class**: Must be inherited by a subclass to be used. Subclasses must implement all abstract methods.
-  ```java
-  class Cat extends Animal {
-      void makeSound() {
-          System.out.println("Meow!");
-      }
-  }
-  ```
-
-#### **4. Purpose**
-- **Concrete Class**: Represents a specific, fully functional entity.
-  ```java
-  class Car {
-      void drive() {
-          System.out.println("Driving...");
-      }
-  }
-  ```
-- **Abstract Class**: Provides a base for other classes and defines a common interface or partial implementation.
-  ```java
-  abstract class Vehicle {
-      abstract void move();
-      void stop() {
-          System.out.println("Stopping...");
-      }
-  }
-  ```
-
----
-
-### **When to Use Which?**
-
-#### **Use a Concrete Class When**:
-- You need a fully functional class with no abstract methods.
-- You want to create objects directly.
-- There is no need for further subclassing or sharing common behavior.
-
-#### **Use an Abstract Class When**:
-- You want to provide a common base for multiple subclasses.
-- You want to define a common interface or partial implementation.
-- You want to enforce that subclasses implement certain methods.
-
----
-
-### **Summary**
-- **Concrete Class**: Fully implemented, can be instantiated directly.
-- **Abstract Class**: Can have abstract and concrete methods, cannot be instantiated directly, must be subclassed.
-
-Use concrete classes for specific, complete entities, and abstract classes for defining common behavior or interfaces for related classes.
-
-
-
 # What are the key features of Java? Explain them briefly.
 
 ### **Key Features of Java**
@@ -804,6 +646,185 @@ public class GarbageCollectionExample {
 - **Tuning**: Adjust heap size, select garbage collector, and enable GC logging.
 
 Garbage collection is a critical feature of Java that ensures efficient memory management and prevents memory leaks. By understanding how it works, developers can write more efficient and reliable applications.
+
+# What is the difference between a concrete class and an abstract class?
+
+### **Difference Between a Concrete Class and an Abstract Class**
+
+| Feature           | Concrete Class                               | Abstract Class                                               |
+| ----------------- | -------------------------------------------- | ------------------------------------------------------------ |
+| **Instantiation** | Can be instantiated directly.                | Cannot be instantiated directly.                             |
+| **Methods**       | All methods are fully implemented.           | Can have both abstract (unimplemented) and concrete (implemented) methods. |
+| **Inheritance**   | Can be inherited by other classes.           | Must be inherited by a subclass to be used.                  |
+| **Purpose**       | Represents a complete, specific entity.      | Provides a base for other classes and defines a common interface or partial implementation. |
+| **Use Case**      | Used when you need a fully functional class. | Used when you want to share code among related classes or enforce a common interface. |
+
+---
+
+### **Concrete Class**
+
+- A **concrete class** is a class that can be instantiated directly.
+- It provides a complete implementation of all its methods.
+- It is used to create objects that represent specific entities.
+
+#### **Example**:
+
+```java
+class Dog {
+    void bark() {
+        System.out.println("Woof!");
+    }
+}
+
+// Usage
+Dog myDog = new Dog();
+myDog.bark(); // Output: Woof!
+```
+
+---
+
+### **Abstract Class**
+
+- An **abstract class** cannot be instantiated directly.
+- It can contain both **abstract methods** (methods without implementation) and **concrete methods** (methods with implementation).
+- It is designed to be a base class for other classes. Subclasses must provide implementations for the abstract methods.
+
+#### **Example**:
+
+```java
+abstract class Animal {
+    // Abstract method (no implementation)
+    abstract void makeSound();
+
+    // Concrete method (with implementation)
+    void sleep() {
+        System.out.println("Sleeping...");
+    }
+}
+
+class Cat extends Animal {
+    void makeSound() {
+        System.out.println("Meow!");
+    }
+}
+
+// Usage
+Animal myCat = new Cat();
+myCat.makeSound(); // Output: Meow!
+myCat.sleep();     // Output: Sleeping...
+```
+
+---
+
+### **Key Differences in Detail**
+
+#### **1. Instantiation**
+
+- **Concrete Class**: You can create objects directly using the `new` keyword.
+
+  ```java
+  Dog myDog = new Dog();
+  ```
+
+- **Abstract Class**: You cannot create objects directly. It must be subclassed.
+
+  ```java
+  // Animal myAnimal = new Animal(); // This will cause a compilation error.
+  Animal myCat = new Cat(); // Correct usage.
+  ```
+
+#### **2. Methods**
+
+- **Concrete Class**: All methods are fully implemented.
+
+  ```java
+  class Dog {
+      void bark() {
+          System.out.println("Woof!");
+      }
+  }
+  ```
+
+- **Abstract Class**: Can have abstract methods (without implementation) and concrete methods (with implementation).
+
+  ```java
+  abstract class Animal {
+      abstract void makeSound(); // Abstract method
+      void sleep() {             // Concrete method
+          System.out.println("Sleeping...");
+      }
+  }
+  ```
+
+#### **3. Inheritance**
+
+- **Concrete Class**: Can be inherited, but it is not mandatory.
+
+  ```java
+  class Puppy extends Dog {
+      void whine() {
+          System.out.println("Whining...");
+      }
+  }
+  ```
+
+- **Abstract Class**: Must be inherited by a subclass to be used. Subclasses must implement all abstract methods.
+
+  ```java
+  class Cat extends Animal {
+      void makeSound() {
+          System.out.println("Meow!");
+      }
+  }
+  ```
+
+#### **4. Purpose**
+
+- **Concrete Class**: Represents a specific, fully functional entity.
+
+  ```java
+  class Car {
+      void drive() {
+          System.out.println("Driving...");
+      }
+  }
+  ```
+
+- **Abstract Class**: Provides a base for other classes and defines a common interface or partial implementation.
+
+  ```java
+  abstract class Vehicle {
+      abstract void move();
+      void stop() {
+          System.out.println("Stopping...");
+      }
+  }
+  ```
+
+---
+
+### **When to Use Which?**
+
+#### **Use a Concrete Class When**:
+
+- You need a fully functional class with no abstract methods.
+- You want to create objects directly.
+- There is no need for further subclassing or sharing common behavior.
+
+#### **Use an Abstract Class When**:
+
+- You want to provide a common base for multiple subclasses.
+- You want to define a common interface or partial implementation.
+- You want to enforce that subclasses implement certain methods.
+
+---
+
+### **Summary**
+
+- **Concrete Class**: Fully implemented, can be instantiated directly.
+- **Abstract Class**: Can have abstract and concrete methods, cannot be instantiated directly, must be subclassed.
+
+Use concrete classes for specific, complete entities, and abstract classes for defining common behavior or interfaces for related classes.
 
 # What are the different types of class loaders in Java?
 
