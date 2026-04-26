@@ -7,15 +7,24 @@
 Understand:
 
 - HTTP / HTTPS
+
 - TCP vs UDP
+
 - DNS
+
 - Load balancing basics
-- Reverse Proxy
 
-👉 Learn:
+- **Reverse Proxy**: A **Reverse Proxy** is a server that sits **in front of your backend servers** and receives client requests first, then forwards them to internal servers.
 
-- How browser reaches server
-- What happens when you type google.com
+  ```
+  Client Browser
+      ↓
+  Reverse Proxy (Nginx / HAProxy / Apache / Envoy)
+      ↓
+  Spring Boot App / Node.js / Multiple Services
+  ```
+
+![ChatGPT Image Apr 21, 2026, 07_02_02 PM](/home/ahasan/Downloads/ChatGPT Image Apr 21, 2026, 07_02_02 PM.png)
 
 ------
 
