@@ -14,7 +14,7 @@ Understand:
 
 - Load balancing basics
 
-- **Reverse Proxy**: A **Reverse Proxy** is a server that sits **in front of your backend servers** and receives client requests first, then forwards them to internal servers.
+- **Reverse Proxy**: A **Reverse Proxy** is a server that sits in front of your backend servers and receives client requests first, then forwards them to internal servers.
 
   ```
   Client Browser
