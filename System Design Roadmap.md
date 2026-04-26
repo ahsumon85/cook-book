@@ -24,7 +24,7 @@ Understand:
   Spring Boot App / Node.js / Multiple Services
   ```
 
-![ChatGPT Image Apr 21, 2026, 07_02_02 PM](/home/ahasan/Downloads/ChatGPT Image Apr 21, 2026, 07_02_02 PM.png)
+![Screenshot](assets/network-diagram.png)
 
 ------
 
