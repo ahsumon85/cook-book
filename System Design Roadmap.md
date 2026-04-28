@@ -1,6 +1,4 @@
-# 🚀 System Design Roadmap (Beginner → Advanced)
-
-## 📌 Phase 1: Foundations (Must Know First)
+# 🚀 System Design
 
 ### 1. Networking Basics
 
@@ -40,7 +38,7 @@ Understand:
 
 ### 3. Databases
 
-## SQL (Must Strong)
+### SQL
 
 - Indexing
 - Joins
@@ -48,23 +46,19 @@ Understand:
 - ACID
 - Normalization
 
-## NoSQL
+### NoSQL
 
 - MongoDB
 - Key-Value DB
 - Document DB
 - CAP Theorem
 
-------
-
-# 📌 Phase 2: Core System Design Concepts
-
-## 4. Scalability
+### 4. Scalability
 
 - Vertical Scaling = Bigger server
 - Horizontal Scaling = More servers
 
-### 1️⃣ Vertical Scaling (Scale Up)
+###  1️⃣ Vertical Scaling (Scale Up)
 
 **Add more power to one server.**
 
@@ -126,7 +120,7 @@ Big Powerful Server
 - Single point of failure
 - Downtime during upgrade possible
 
-## Horizontal Scaling (Scale Out)
+### Horizontal Scaling (Scale Out)
 
 **Add more servers instead of making one bigger.**
 
@@ -182,6 +176,10 @@ Server 3
 
 A **Load Balancer** distributes incoming traffic across multiple servers so no single server becomes overloaded.
 
+- Round Robin
+- Least Connections
+- Sticky Session
+
 
 ```
 Users
@@ -214,7 +212,7 @@ With load balancer:
 10,000 users → Split across 3 servers
 ```
 
-##  Round Robin
+###  Round Robin
 
 Requests are sent one by one in rotation.
 
@@ -228,7 +226,7 @@ Req5 → Server2
 
 ------
 
-## Best For
+### Best For
 
 - Similar server capacity
 - Similar request sizes
@@ -236,7 +234,7 @@ Req5 → Server2
 
 ------
 
-## Pros
+### Pros
 
 ✅ Easy
 ✅ Fair distribution
@@ -244,21 +242,111 @@ Req5 → Server2
 
 ------
 
-## Cons
+### Cons
 
 ❌ Doesn't know server load
 ❌ Bad if one request is heavy
 
 ------
 
-# Example
+###  Least Connections
+
+Send new request to server with **fewest active connections**.
+
+```
+Server1 = 100 active
+Server2 = 20 active
+Server3 = 8 active
+
+Next request → Server3
+```
+
+------
+
+### Best For
+
+- Long-lived requests
+- APIs with uneven request times
+- WebSocket/chat systems
+
+------
+
+### Pros
+
+✅ Smarter than round robin
+✅ Better under mixed workloads
+
+------
+
+### Cons
+
+❌ Slightly more overhead
+❌ Needs live metrics
+
+------
+
+###  Sticky Session (Session Affinity)
+
+Same user always goes to same server.
+
+```
+User A → Server2
+User A next request → Server2 again
+```
+
+Usually based on:
+
+- Cookie
+- Source IP
+- Session ID
+
+------
+
+### Why Needed
+
+If sessions stored in server memory:
+
+```
+Login on Server1
+Next request to Server2
+Server2 doesn't know user session
+```
+
+Sticky session solves that.
+
+------
+
+### Pros
+
+✅ Easy for session-based apps
+✅ No shared session store needed initially
+
+------
+
+### Cons
+
+❌ Uneven load possible
+❌ If server dies, user loses session
+❌ Harder to scale
+
+------
+
+### Better Alternative to Sticky Session
+
+Use shared session store:
+
+```
+Redis + Spring Session
+```
+
+### Example
 
 ```
 Server1 busy with report generation
 But still gets next request
 ```
 
-## 6. Caching
+###  6. Caching
 
 - Redis
 - CDN
@@ -267,7 +355,7 @@ But still gets next request
 
 ------
 
-## 7. Messaging Systems
+###  7. Messaging Systems
 
 - RabbitMQ = Task Queue
 - Kafka = Event Streaming
@@ -278,10 +366,6 @@ Understand:
 - Producer/Consumer
 - Retry
 - Dead Letter Queue
-
-------
-
-# 📌 Phase 3: Distributed Systems
 
 ## 8. Consistency Concepts
 
@@ -302,10 +386,6 @@ Understand:
 
 - Saga Pattern
 - 2PC
-
-------
-
-# 📌 Phase 4: Advanced Architecture
 
 ## 11. Microservices
 
@@ -328,7 +408,7 @@ Use:
 
 ------
 
-# 📌 Phase 5: Real World Designs
+# 📌Real World Designs
 
 Practice designing:
 
@@ -354,73 +434,7 @@ Practice designing:
 
 ------
 
-# 📌 For Java Developer (Your Path)
-
-Since you know Java:
-
-### Focus Tools:
-
-- Spring Boot
-- Spring Cloud
-- Redis
-- Kafka
-- PostgreSQL
-- Docker
-- Kubernetes
-
-------
-
-# 📌 Best Learning Order (6 Months Plan)
-
-## Month 1:
-
-- Networking
-- DB basics
-- REST API
-
-## Month 2:
-
-- Cache + Redis
-- Load Balancer
-- CDN
-
-## Month 3:
-
-- Kafka / RabbitMQ
-- Async systems
-
-## Month 4:
-
-- Microservices
-- API Gateway
-
-## Month 5:
-
-- Distributed Systems
-- Replication / Sharding
-
-## Month 6:
-
-- Mock Interviews + Real Designs
-
-------
-
-# 📌 Best Resources
-
-## YouTube:
-
-- Gaurav Sen
-- ByteByteGo
-- Hussein Nasser
-
-## Books:
-
-- Designing Data Intensive Applications
-- System Design Interview Vol 1 & 2
-
-------
-
-# 📌 Interview Trick
+### 📌 Interview Trick
 
 Whenever asked system design:
 
@@ -438,18 +452,15 @@ Always discuss:
 
 ------
 
-# 📌 If Your Goal = Senior Engineer / Remote Job
+### 📌 Senior Engineer / Remote Job
 
 Master these first:
 
 ✅ Cache
- ✅ Kafka
- ✅ DB indexing
- ✅ Microservices
- ✅ Docker
- ✅ Kubernetes
- ✅ AWS basics
+✅ Kafka
+✅ DB indexing
+✅ Microservices
+✅ Docker
+✅ Kubernetes
+✅ AWS basics
 
-------
-
-# 
